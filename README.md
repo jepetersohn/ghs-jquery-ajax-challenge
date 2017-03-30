@@ -4,6 +4,8 @@
 
 * Sending information to a server with AJAX.
 * Handling a server response.
+_other things? better working for those two points?_
+
 
 ## Summary
 
