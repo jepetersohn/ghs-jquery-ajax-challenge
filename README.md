@@ -54,6 +54,12 @@ In this release we're going to be taking the first steps toward sending an AJAX 
 
 Anytime we want something to occur when we interact with a page we need to bind to an event. In this case we are going to bind a click event to the anchor tags on the page. For a referesher on event binding with JQuery [here](http://api.jquery.com/on/) is a link to the documentation for JQuery's "on" function.
 
+``` JavaScript
+$('.myclass').on('click', function(event) {
+  // Event handler code goes here
+}
+```
+
 If we just bind to an event and add our chode, we are going to run into a problem. When we click an anchor tag it's default behavior is to take us to a new page based on the url provided in the href attribute. We don't want it to perform it's default action, we just want it to execute our code.
 
 If we call Javascript's [preventDefault](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) function on our event it will stop the event's default action and tell the page "hey you can stop what you're doing, I'll handle it from here". 
