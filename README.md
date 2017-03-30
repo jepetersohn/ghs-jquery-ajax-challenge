@@ -1,4 +1,4 @@
-# JQuery part two: It's not just client side anymore
+# JQuery part two: Interacting with a Server
 
 ## Learning Competencies
 
@@ -50,7 +50,7 @@ To confirm this we can also type `$ === JQuery`. If JQuery is available this wil
 A note about `$(document).ready()` and why we use it. If we add our code inside the function it will not excecute until the page has loaded. This is important because we are finding elements and manipulating or binding events to them and we need to make sure they have loaded on the page before we look for them. 
 
 ### Release 1: Stop the browser from doing a full page refresh
-
+In this release we're going to be taking the first steps toward sending an AJAX request to a server. 
 
 ### Release 2: Send AJAX request and confirm a response 
 confirm with (console.log)
