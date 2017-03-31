@@ -60,13 +60,24 @@ $('.myclass').on('click', function(event) {
 }
 ```
 
-If we just bind to an event and add our chode, we are going to run into a problem. When we click an anchor tag it's default behavior is to take us to a new page based on the url provided in the href attribute. We don't want it to perform it's default action, we just want it to execute our code.
+If we just bind to an event and add our code, we are going to run into a problem. When we click an anchor tag it's default behavior is to take us to a new page based on the url provided in the href attribute. We don't want it to perform it's default action, we just want it to execute our code.
 
 If we call Javascript's [preventDefault](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) function on our event it will stop the event's default action and tell the page "hey you can stop what you're doing, I'll handle it from here". 
 
 ### Release 2: Send AJAX request and confirm a response 
-confirm with (console.log)
+Let's send a request with AJAX! We're going to need to use two JQuery functions for this release, the [ajax](http://api.jquery.com/jquery.ajax/) funtion and the [done](https://api.jquery.com/deferred.done/). When we click and achor tag we want to send an AJAX request using the method GET to the anchor tag's href attribute.
 
+``` JavaScript
+  var $ajax = $.ajax({
+    url: someUrl,
+    method: 'get'
+  })
+```
+To log our response we call the done function on the response returned by the ajax function
+
+``` JavaScript
+  $ajax.done( code goes here )
+```
 
 ### Release 3: Sending different dataTypes
 Send AJAX request with different data types and confirm receiving a response (console.log)
