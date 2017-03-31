@@ -80,7 +80,17 @@ To log our response we call the done function on the response returned by the aj
 ```
 
 ### Release 3: Sending different dataTypes
-Send AJAX request with different data types and confirm receiving a response (console.log)
+What did our logged response in the last challenge look like? The server endpoint we hit is set to return HTML by default.
+
+What if we want to return a different dataType? The server request is just that, a request. If the server can respond it will. In this case, the server is also set up to return JSON. The [ajax](http://api.jquery.com/jquery.ajax/) function has an optional dataType argument we're not currently using. Let's pass the AJAX call a dataType of JSON and log what happens.
+
+``` JavaScript
+  var $ajax = $.ajax({
+    url: someUrl,
+    method: 'get',
+    dataType: 'JSON'
+  })
+```
 ### Release 4: Use the response and DOM Traversal to update the page
 
 ### Release 5: Use failure and always when handling response
