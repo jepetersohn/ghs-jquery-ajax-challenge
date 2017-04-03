@@ -75,7 +75,7 @@ Let's send a request with AJAX! We're going to need to use two jQuery functions 
 To log our response we call the done function on the response returned by the ajax function
 
 ``` JavaScript
-  $ajax.done( /* code goes here */ )
+  $ajax.done( /* function goes here */ )
 ```
 
 ### Release 3: Sending different dataTypes
@@ -85,17 +85,29 @@ What if we want the data to be returned in a different format? We can modify our
 
 ``` JavaScript
   var $ajax = $.ajax({
-    url: someUrl,
-    method: 'get',
+    url: /* code to get the url in href attribute */,
+    method: 'GET',
     dataType: 'JSON'
   })
 ```
 ### Release 4: Use the response and DOM Traversal to update the page
+Now that we have the AJAX structure working and we can retrieve HTML and JSON data - we can write code to update the DOM based on the response. Use your skills from the DOM traversal challenge to update the web page.
 
 ### Release 5: Use failure and always when handling response
+We have use the `done` function successfully which assumes nothing will ever go wrong. What if something does go wrong though? jQuery has a `fail` and `always` function available, in addition to `done`.
+
+Read the [jQuery documentation](http://api.jquery.com/jquery.ajax/) on these two functions, and write code to handle these cases. (*hint: search for `.fail` on that page*)
+
+Two possibilities:
+- Report the failed request to your user in the `fail` function
+- Always indicate when the ajax request is finished on the top of the page (bonus points for reporting the time it took)
 
 ### Bonus!
 
-- switch the data type requested and make the page work with that
-- handle the user clicking something more than once, only making the ajax call when necessary
-- late binding with response
+Complete these tasks as a stretch challenge
+- Switch the dataType to the opposite of what you used and make the page work with that
+- What if a user clicks more than once? Do we need to make the AJAX call every time?
+  - Modify your code to only send a request to the server once, no matter how many times the user clicks
+- Late binding / Event delegation
+  - We are adding elements to the DOM *after* the document ready event, how can we add click handlers to these new elements?
+  - See [jQuery documention](http://api.jquery.com/on/) about event delegation
