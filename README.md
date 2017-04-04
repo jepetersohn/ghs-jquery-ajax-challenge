@@ -62,16 +62,16 @@ Let's send a request with AJAX! We're going to need to use two jQuery functions 
     method: 'GET'
   })
 ```
-To log our response we call the done function on the response returned by the ajax function
+To log our response we will use the `done` function - refer to the [jQuery documentation](https://api.jquery.com/deferred.done/) to see how it is used.
 
 ``` JavaScript
-  $ajax.done( /* function goes here */ )
+  $ajax.done( /* code goes here */ )
 ```
 
 ### Release 3: Sending different dataTypes
 What did our logged response in the last challenge look like? The server endpoint we hit is set to return HTML by default.
 
-What if we want the data to be returned in a different format? We can modify our AJAX request to ask for JSON. If the server supports the JSON format, it will return it (this server does). The [ajax](http://api.jquery.com/jquery.ajax/) function has an optional dataType argument we did not use in our prior request. This time, let's use the dataType option to ask for JSON. What happens in the console log?
+What if we want the data to be returned in a different format? We can modify our AJAX request to ask for JSON. If the server supports the JSON format, it will return it (this server does). The [ajax](http://api.jquery.com/jquery.ajax/) function has an optional `dataType` argument we did not use in our prior request. This time, let's use the `dataType` option to ask for JSON. What does the response look like now?
 
 ``` JavaScript
   var $ajax = $.ajax({
@@ -83,7 +83,7 @@ What if we want the data to be returned in a different format? We can modify our
 ### Release 4: Use the response and DOM Traversal to update the page
 Now that we have the AJAX structure working and we can retrieve HTML and JSON data - we can write code to update the DOM based on the response. Use your skills from the DOM traversal challenge to update the web page.
 
-### Release 5: Use failure and always when handling response
+### Release 5: Use fail and always when handling response
 We have use the `done` function successfully which assumes nothing will ever go wrong. What if something does go wrong though? jQuery has a `fail` and `always` function available, in addition to `done`.
 
 Read the [jQuery documentation](http://api.jquery.com/jquery.ajax/) on these two functions, and write code to handle these cases. (*hint: search for `.fail` on that page*)
