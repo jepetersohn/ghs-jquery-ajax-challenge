@@ -1,4 +1,4 @@
-# jQuery part two: Interacting with a Server
+# jQuery Part Two: Interacting with a Server
 
 ## Learning Competencies
 
@@ -16,7 +16,7 @@ Imagine a home remodeling project and you want to replace the kitchen cabinets, 
 
 A Full Page Refresh **Demolishes** your **Entire Page** - but all you want was a great new kitchen.
 
-AJAX Lets You Update exactly what you want, nothing more, nothing less.
+AJAX lets you update exactly what you want, nothing more, nothing less.
 
 AJAX also gives you lots of options for data transmission:
 - XML (eXtensible Markup Language)
@@ -30,23 +30,13 @@ In this challenge we are going to be working with JSON and HTML
 ## Releases
 
 ### Release 0: Setup
-In this first release we want to make sure jQuery is loaded correctly.
+Just like the last challenge, make sure you start with the code below and that jQuery is setup properly.
 
-If we open the scripts.js file we can see that we are making the following call:
-``` JavaScript
+```JavaScript
 $(document).ready(function(){
-});
+  // Write your code here
+})
 ```
-The code above is using a jQuery function, it is equivalent to saying `jQuery(document).ready(...)`. The `$` is short for `jQuery`.
-
-We want to run a few checks in our browser to make sure our setup is correct. 
-
-First, let's open the index.html file in Chrome, then open our developer tools (Shortcut: `Command + option + j`). Make sure you do not see this error:
-![Image of console error](http://devbootcamp.netlify.com/img/jquery-javascript-error.png)
-
-Second, let's make sure that `$` and `jQuery` are the same thing by typing `$ === jQuery` in the JavaScript console. Other JavaScript libraries and Chrome itself sometimes use the `$` as a shorthand. This is a way to make sure that it means jQuery.
-
-A note about `$(document).ready()` and why we use it. If we add our code inside the function it will not excecute until the page has loaded. This is important because we are finding elements and manipulating or binding events to them and we need to make sure they have loaded on the page before we look for them.
 
 ### Release 1: Stop the browser from doing a full page refresh
 In this release we're going to be taking the first steps toward sending an AJAX request to a server.
